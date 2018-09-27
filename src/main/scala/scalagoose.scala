@@ -3,14 +3,7 @@ import scala.util.Random
 
 object ScalaGoose {
 
-  class dice {
-    val r = new Random()
-
-    def launch: Int = r.nextInt(6) + 1
-  }
-
   type table = Map[String, Int]
-
   val dice = new dice
   val add = """add player (\w+)""".r
   val movDice = """move (\w+) ([1-6]), ([1-6])""".r
@@ -81,5 +74,11 @@ object ScalaGoose {
     }
 
     loop(StdIn.readLine(), Map())
+  }
+
+  class dice {
+    val r = new Random()
+
+    def launch: Int = r.nextInt(6) + 1
   }
 }
